@@ -14,7 +14,7 @@ namespace DOChoiAmthanh
 		/// Singleton design pattern
 		/// </summary>
 		/// <value>The instance.</value>
-		public static T Instance
+		public static T Ins
 		{
 			get
 			{

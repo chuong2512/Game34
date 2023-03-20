@@ -13,15 +13,15 @@ public class DiamondDisplay : MonoBehaviour
     /// </summary>
     void OnDestroy()
     {
-        GameDataManager.Instance.playerData.onChangeDiamond -= i => OnChangeDiamond(i);
+        GameDataManager.Ins.playerData.onChangeDiamond -= i => OnChangeDiamond(i);
     }
 
     public TextMeshProUGUI diamondTmp;
 
     void Start()
     {
-        GameDataManager.Instance.playerData.onChangeDiamond += i => OnChangeDiamond(i);
-        diamondTmp.text = $"x{GameDataManager.Instance.playerData.intBullets}";
+        GameDataManager.Ins.playerData.onChangeDiamond += i => OnChangeDiamond(i);
+        diamondTmp.text = $"x{GameDataManager.Ins.playerData.intBullets}";
     }
 
     /// <summary>

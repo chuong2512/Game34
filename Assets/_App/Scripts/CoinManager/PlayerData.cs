@@ -86,7 +86,7 @@ public class PlayerData : BaseData
 /// 
 /// </summary>
 /// <param name="a"></param>
-    public void SubDiamond(int a)
+    public void SubToy(int a)
     {
         intBullets -= a;
 
@@ -102,7 +102,7 @@ public class PlayerData : BaseData
      /// 
      /// </summary>
      /// <param name="a"></param>
-    public void AddDiamond(int a)
+    public void AddToyNe(int a)
     {
         intBullets += a;
 

@@ -37,7 +37,7 @@ public class Gun : MonoBehaviour
         {
             if (_counter < 0)
             {
-                if (GameDataManager.Instance.playerData.intBullets > 0)
+                if (GameDataManager.Ins.playerData.intBullets > 0)
                 {
                     Debug.Log("------------------Shotttttttttttttttttttttt");
 
@@ -45,7 +45,7 @@ public class Gun : MonoBehaviour
 
                     _counter = timeShot;
 
-                    GameDataManager.Instance.playerData.SubDiamond(1);
+                    GameDataManager.Ins.playerData.SubToy(1);
                     AudioManager.Instance.Play(_amThanh);
                 }
             }
