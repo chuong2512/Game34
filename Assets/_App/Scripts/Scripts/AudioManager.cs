@@ -1,5 +1,6 @@
 ﻿using DOChoiAmthanh;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Assets.DoChoi.Scripts
 {
@@ -11,7 +12,7 @@ namespace Assets.DoChoi.Scripts
         /// <summary>
         /// 
         /// </summary>
-        public AudioSource _AudioSource;
+        [FormerlySerializedAs("_AudioSource")] public AudioSource AudioSource;
 
         /// <summary>
         /// 
@@ -19,7 +20,7 @@ namespace Assets.DoChoi.Scripts
         /// <param name="clip"></param>
         public void Play(AudioClip clip)
         {
-            _AudioSource.PlayOneShot(clip);
+            AudioSource.PlayOneShot(clip);
         }
     }
 }

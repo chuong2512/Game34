@@ -8,7 +8,7 @@ public class Constant
     public static int priceUnlockSong = 1000;
 }
 
-public class PlayerData : BaseData
+public class Player : DataBase
 {
     /// <summary>
     /// 
@@ -39,8 +39,8 @@ public class PlayerData : BaseData
   
     public override void Init()
     {
-        prefString = Constant.DataKey_PlayerData;
-        if (PlayerPrefs.GetString(prefString).Equals(""))
+        pref = Constant.DataKey_PlayerData;
+        if (PlayerPrefs.GetString(pref).Equals(""))
         {
             ResetData();
         }

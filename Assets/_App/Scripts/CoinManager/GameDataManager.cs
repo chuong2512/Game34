@@ -1,5 +1,6 @@
 using DOChoiAmthanh;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [DefaultExecutionOrder(-100)]
 public class GameDataManager : PersistentSingleton<GameDataManager>
@@ -7,7 +8,7 @@ public class GameDataManager : PersistentSingleton<GameDataManager>
     /*----Scriptable data-----------------------------------------------------------------------------------------------*/
 
     /*----Data variable-------------------------------------------------------------------------------------------------*/
-    [HideInInspector] public PlayerData playerData;
+    [FormerlySerializedAs("playerData")] [HideInInspector] public Player player;
 /// <summary>
 /// 
 /// </summary>
@@ -15,18 +16,21 @@ public class GameDataManager : PersistentSingleton<GameDataManager>
     {
         Application.targetFrameRate = Mathf.Max(60, Screen.currentResolution.refreshRate);
     }
+
+    public void ResetData()
+    {
+        player.ResetData();
+    }
+
 /// <summary>
 /// 
 /// </summary>
     private void OnEnable()
     {
-        playerData = new GameObject(Constant.DataKey_PlayerData).AddComponent<PlayerData>();
-        playerData.transform.parent = transform;
-        playerData.Init();
+        player = new GameObject(Constant.DataKey_PlayerData).AddComponent<Player>();
+        player.transform.parent = transform;
+        player.Init();
     }
 
-    public void ResetData()
-    {
-        playerData.ResetData();
-    }
+    
 }

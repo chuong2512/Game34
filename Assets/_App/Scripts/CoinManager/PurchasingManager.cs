@@ -15,32 +15,32 @@ public class PurchasingManager : MonoBehaviour
         {
             case 3: ///
                 IAPManager.OnPurchaseSuccess = () =>
-                    GameDataManager.Ins.playerData.AddToyNe(50);
+                    GameDataManager.Ins.player.AddToyNe(50);
                 ///
                 IAPManager.Ins.BuyProductID(IAPKey.PACK3);
                 break;
             case 4: ///
                 IAPManager.OnPurchaseSuccess = () =>
-                    GameDataManager.Ins.playerData.AddToyNe(100);
+                    GameDataManager.Ins.player.AddToyNe(100);
                 
                 IAPManager.Ins.BuyProductID(IAPKey.PACK4);
                 break;
             case 5: ///
                 IAPManager.OnPurchaseSuccess = () =>
-                    GameDataManager.Ins.playerData.AddToyNe(200);
+                    GameDataManager.Ins.player.AddToyNe(200);
                 ////
                 IAPManager.Ins.BuyProductID(IAPKey.PACK5);
                 break;
             case 1:
                 IAPManager.OnPurchaseSuccess = () =>
-                    GameDataManager.Ins.playerData.AddToyNe(10);
+                    GameDataManager.Ins.player.AddToyNe(10);
                 //////////////
                 IAPManager.Ins.BuyProductID(IAPKey.PACK1);
                 break;
             ///
             case 2:
                 IAPManager.OnPurchaseSuccess = () =>
-                    GameDataManager.Ins.playerData.AddToyNe(20);
+                    GameDataManager.Ins.player.AddToyNe(20);
                 ////////////////
                 IAPManager.Ins.BuyProductID(IAPKey.PACK2);
                 break;
@@ -53,6 +53,6 @@ public class PurchasingManager : MonoBehaviour
     /// <param name="i"></param>
     public void Sub(int i)
     {
-        GameDataManager.Ins.playerData.SubToy(i);
+        GameDataManager.Ins.player.SubToy(i);
     }
 }

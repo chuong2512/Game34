@@ -6,22 +6,22 @@ using UnityEngine;
 /// <summary>
 /// 
 /// </summary>
-public class DiamondDisplay : MonoBehaviour
+public class DiamondDis : MonoBehaviour
 {
     /// <summary>
     /// 
     /// </summary>
     void OnDestroy()
     {
-        GameDataManager.Ins.playerData.onChangeDiamond -= i => OnChangeDiamond(i);
+        GameDataManager.Ins.player.onChangeDiamond -= i => OnChangeDiamond(i);
     }
 
     public TextMeshProUGUI diamondTmp;
 
     void Start()
     {
-        GameDataManager.Ins.playerData.onChangeDiamond += i => OnChangeDiamond(i);
-        diamondTmp.text = $"x{GameDataManager.Ins.playerData.intBullets}";
+        GameDataManager.Ins.player.onChangeDiamond += i => OnChangeDiamond(i);
+        diamondTmp.text = $"x{GameDataManager.Ins.player.intBullets}";
     }
 
     /// <summary>

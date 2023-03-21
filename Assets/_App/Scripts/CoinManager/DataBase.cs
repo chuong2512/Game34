@@ -2,12 +2,12 @@
 using UnityEngine;
 
 [Serializable]
-public class BaseData : MonoBehaviour {
-    protected string prefString;
+public class DataBase : MonoBehaviour {
+    protected string pref;
 
     public virtual void Init() {
         try {
-            JsonUtility.FromJsonOverwrite(PlayerPrefs.GetString(prefString), this);
+            JsonUtility.FromJsonOverwrite(PlayerPrefs.GetString(pref), this);
         }
         catch (Exception e) {
             ResetData();
@@ -20,11 +20,12 @@ public class BaseData : MonoBehaviour {
     }
 
     public virtual void ResetData() { }
-    protected virtual void CheckAppendData() { }
-
+    
     protected void Save() {
         string json = JsonUtility.ToJson(this);
         // Debug.Log("json_______" + json);
-        PlayerPrefs.SetString(prefString, json);
+        PlayerPrefs.SetString(pref, json);
     }
+    protected virtual void CheckAppendData() { }
+    
 }
